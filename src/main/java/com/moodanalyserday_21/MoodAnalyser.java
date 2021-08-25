@@ -15,17 +15,24 @@ public class MoodAnalyser {
 		this.message = message;
 	}
 	public String moodAnalyser() {
-		
-		if(message.contains(SAD)) {
-			return SAD;
-		}
-		else {
+		try {
+			
+			if(message.contains(SAD)) {
+				return SAD;
+			}
+			else {
+				return HAPPY;
+			}
+			
+		}catch(NullPointerException e) {
+			
 			return HAPPY;
 		}
 	}
 	public static void main( String[] args ) {
 		
-		MoodAnalyser mood = new MoodAnalyser("I am Happy");
+		MoodAnalyser mood = new MoodAnalyser(null);
 		System.out.println(mood.moodAnalyser() + " Mood ");
-    }
+		
+	}
 }

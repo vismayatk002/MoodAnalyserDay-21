@@ -25,4 +25,11 @@ public class MoodAnalyserTest {
     	MoodAnalyser mood = new MoodAnalyser();
         assertEquals(mood.SAD, mood.moodAnalyser());
     }
+    
+    @Test
+    public void givenNullMessageShouldReturnHappy() {
+    	
+    	MoodAnalyser mood = new MoodAnalyser(null);
+        assertEquals(mood.HAPPY, mood.moodAnalyser());
+    }
 }
