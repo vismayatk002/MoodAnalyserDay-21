@@ -4,8 +4,17 @@ public class MoodAnalyser {
     
 	final String HAPPY = "Happy";
 	final String SAD = "Sad";
+	String message;
 	
-	public String moodAnalyser(String message) {
+	public MoodAnalyser() {
+		
+		this.message = "Sad";
+	}
+	public MoodAnalyser(String message) {
+		
+		this.message = message;
+	}
+	public String moodAnalyser() {
 		
 		if(message.contains(SAD)) {
 			return SAD;
@@ -16,8 +25,7 @@ public class MoodAnalyser {
 	}
 	public static void main( String[] args ) {
 		
-		MoodAnalyser mood = new MoodAnalyser();
-		String message = "I am Sad";
-		System.out.println(mood.moodAnalyser(message) + " Mood ");
+		MoodAnalyser mood = new MoodAnalyser("I am Happy");
+		System.out.println(mood.moodAnalyser() + " Mood ");
     }
 }
